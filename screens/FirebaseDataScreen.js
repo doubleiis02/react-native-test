@@ -1,13 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import QRCode from 'react-native-qrcode-svg';
-import NavigationStack from "./navigation/NavigationStack"
 
-
-export default function App() {
+export default function FirebaseDataScreen() {
   return (
-    <NavigationStack/>
+    <View style={styles.container}>
+      <Text>This is our Firebase Data Screen!</Text>
+    </View>
   );
 }
 
