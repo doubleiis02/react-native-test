@@ -20,7 +20,7 @@ export default function HomeScreen() {
       <Text>Welcome {userName}</Text> 
       <Image style ={styles.image} source = {{uri: profilePic}}/>
       <QRCode 
-        value = "gSo995c2PoaUejm5eS5cLaahXOL2"
+        value = {user.uid}
       />
       <Button
         onPress = {logout}
