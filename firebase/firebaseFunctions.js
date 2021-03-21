@@ -100,10 +100,12 @@ export async function login () {
     } 
   }
 
-  export async function logout(){
-    try {
-      firebase.auth().signOut();
-    } catch (e) {
-      console.error(e);
-    }
+export async function logout(){
+  try {
+    firebase.auth().signOut();
+  } catch (e) {
+    console.error(e);
   }
+}
+
+export {db};

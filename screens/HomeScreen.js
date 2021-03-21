@@ -1,6 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import {AuthContext} from "../navigation/AuthProvider";
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import QRCode from 'react-native-qrcode-svg';
 
 export default function HomeScreen() {
   const {user, setUser, logout, } = useContext(AuthContext);
@@ -18,7 +19,9 @@ export default function HomeScreen() {
       <Text>This is our Home Screen!</Text>
       <Text>Welcome {userName}</Text> 
       <Image style ={styles.image} source = {{uri: profilePic}}/>
-
+      <QRCode 
+        value = "gSo995c2PoaUejm5eS5cLaahXOL2"
+      />
       <Button
         onPress = {logout}
         title = "Log Out"
