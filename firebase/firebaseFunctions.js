@@ -8,6 +8,7 @@ else app = firebase.app();
 let db = app.database();
 console.log ("Firebase set up!")
 
+export {db};
 const isUserEqual = (googleUser, firebaseUser) => {
     if (firebaseUser) {
       var providerData = firebaseUser.providerData;
@@ -78,6 +79,13 @@ function setProfile(result){
             displayName: result.user.displayName
         }
     )
+}
+
+export function addToList(uid, value){
+  var updates = {};
+  updates["list/" + uid + "/" + value] = true;
+  return db.ref().update(updates);
+  //db.ref("list/" + uid +"/" + value).set(true);
 }
 
 export async function login () {
